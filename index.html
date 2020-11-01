@@ -9,24 +9,47 @@
   <title>Weather Dashboard</title>
 </head>
 <body>
+  <!-- jumbotron -->
   <div class="jumbotron container-fluid mt-4 text-center" style="background-color: #01014d; color: whitesmoke;">
   <h1><strong>Weather Dashboard</strong></h1>
   </div>
-  <div class="container"></div>
-    <!-- search for city -->
+  <div class="container">
+    <!-- search for city row -->
     <div class="row">
-      <div class="col-sm-4 bg-light"></div>
+      <div class="col-sm-4 bg-light">
       <h4 class="pt-1"><strong>Search for a City:</strong></h4>
-      <!-- input form -->
-      <div id='main'>
+      <!-- input form, btn and drop down -->
+      <div class="input-group mb-3" id='main'>
+        <!-- input cityField -->
         <input id='cityField' type='text' />
-      <!-- text box -->
+      <!-- submit btn -->
       <button id='submitButton'>Submit</button>
+      <!-- drop down for prior searches -->
       <select id='citySelect'></select>
-      
-      
+      </div>
+      <div class="col-sm-8">
+        <div class="row ml-2 border border-dark rounded">
+          <div class="col-sm-12" id="">
+            <h3 class="" id=""></h3>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+        <div class="col-sm-12" id="">
+          <h3>5-Day Forecast:</h3>
+          <div class="row text-light">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
     </div>
-    
+  </div>
   
 
 
