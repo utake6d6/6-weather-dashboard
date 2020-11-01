@@ -2,14 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <title>Weather Dashboard</title>
 </head>
 <body>
+  <div class="jumbotron container-fluid mt-4 text-center" style="background-color: #01014d; color: whitesmoke;">
+  <h1><strong>Weather Dashboard</strong></h1>
+  </div>
+  <div class="container"></div>
+    <!-- search for city -->
+    <div class="row">
+      <div class="col-sm-4 bg-light"></div>
+      <h4 class="pt-1"><strong>Search for a City:</strong></h4>
+      <!-- input form -->
+      <div id='main'>
+        <input id='cityField' type='text' />
+      <!-- text box -->
+      <button id='submitButton'>Submit</button>
+      <select id='citySelect'></select>
+      
+      
+    </div>
+    
+  
 
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets\js\script.js"></script>
 </body>
 </html>
