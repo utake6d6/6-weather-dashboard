@@ -25,12 +25,28 @@ function callApi(cityName) {
       cityName +
       "&appid=d2aaf64c3e7944fd08c574266c941724",
     function (data) {
-      // console.log("submitButton.onclick -> data", data);
+      console.log("submitButton.onclick -> data", data);
       // console.log(data.coord.lat);
       // console.log(data.coord.lon);
       // cityList.push(cityField.value);
       // console.log(cityList);
 
+      // returns temp
+      $.getJSON(
+        "https://api.openweathermap.org/data/2.5/weather?lat=" +
+          data.coord.lat +
+          "&lon=" +
+          data.coord.lon +
+          "&appid=d2aaf64c3e7944fd08c574266c941724",
+        function (data) {
+          console.log(data.current.temp);
+          var div = document.createElement("div");
+          div.innerHTML = "Temperature: " + data.current.temp;
+          document.getElementById("main").appendChild(div);
+        }
+      );
+
+      // returns HMD
       $.getJSON(
         "https://api.openweathermap.org/data/2.5/onecall?lat=" +
           data.coord.lat +
@@ -42,7 +58,25 @@ function callApi(cityName) {
           // console.log("submitButton.onclick -> data", data);
           console.log(data.current.humidity);
           var div = document.createElement("div");
-          div.innerHTML = "humidity: " + data.current.humidity;
+          div.innerHTML = "Humidity: " + data.current.humidity;
+          document.getElementById("main").appendChild(div);
+          // console.log(cityField.value);
+        }
+      );
+
+      // returns WS
+      $.getJSON(
+        "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+          data.coord.lat +
+          "&lon=" +
+          data.coord.lon +
+          "&appid=d2aaf64c3e7944fd08c574266c941724",
+        function (data) {
+          // JSON result in `data` variable
+          // console.log("submitButton.onclick -> data", data);
+          console.log(data.current.wind);
+          var div = document.createElement("div");
+          div.innerHTML = "Wind Speed: " + data.current.wind;
           document.getElementById("main").appendChild(div);
           // console.log(cityField.value);
         }
@@ -50,3 +84,21 @@ function callApi(cityName) {
     }
   );
 }
+
+// // returns UVI
+// $.getJSON(
+//   "http://api.openweathermap.org/data/2.5/uvi?lat=" +
+//     data.coord.lat +
+//     "&lon=" +
+//     data.coord.lon +
+//     "&appid=d2aaf64c3e7944fd08c574266c941724",
+//   function (data) {
+//     // JSON result in `data` variable
+//     // console.log("submitButton.onclick -> data", data);
+//     // console.log(data.current.speed);
+//     var div = document.createElement("div");
+//     div.innerHTML = "UV index: " + data.current.speed;
+//     document.getElementById("wind").appendChild(div);
+//     // console.log(cityField.value);
+//   }
+// );
