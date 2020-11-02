@@ -26,20 +26,18 @@
         <!-- input cityField -->
         <input id='cityField' type='text' autofocus/>
       <!-- submit btn -->
-      <button id='submitButton'>Submit</button>
+      <button id='searchButton'>Search</button>
       <!-- drop down for prior searches -->
       <select id='citySelect'></select>
       </div>
       <!-- box showing searched city's name, todays date, weather img, temp, HMD, WS & UVI -->
-      <div class="col-sm-8">
-        <div class="row ml-2 border border-dark rounded">
-          <div class="col-sm-12" id="main">
-            <h3 class="" id=""></h3>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
+        <div id='currentDiv' class='current'>
+            <h2 id="cityHeader"></h2>
+            <p>Condition:<span></span></p>
+            <p>Temperature:<span></span></p>
+            <p>Humidity:<span></span></p>
+            <p>Wind Speed:<span></span></p>
+            <p>UV Index:<span></span></p>
         </div>
         <!-- boxes showing next 5 days, date, weather img, temp & HMD -->
         <div class="col-sm-12" id="">
@@ -52,7 +50,6 @@
             <div></div>
           </div>
         </div>
-      </div>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
