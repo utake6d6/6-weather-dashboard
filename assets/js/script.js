@@ -69,8 +69,27 @@ function selectContains(city) {
 function displayInfo(city, weatherData) {
   var uvi = weatherData.current.uvi;
 
-  get('currentDiv')
+  get('currentDiv').style.visibility = 'visible';
+  $(".daily").css('visibility', 'visible');
+
+  get('cityHeader').innerHTML = city + ' ' + formatDate(weatherData.current.dt * 1000);
+  get('currCondition'). innerHTML = weatherData.current.weather[0].main;
+  get('currIcon').src = 'https://openweathermap.org/img/wn/04d@2x.png' + weatherData.current.weather[0].icon + '.png';
+  get('currTemp').innerHTML = weatherData.current.temp + '°F';
+  get('currHumidity').innerHTML = weatherData.current.humidity + '%';
+  get('currWind').innerHTML = weatherData.current.wind_speed + 'mph';
+  get('currUvi').style.color = translateUvi(uvi).color;
+  get('currUvi').innerHTML = translateUvi(uvi).display;
+
 }
 
+function get(id) {
+  return document.getElementById(id);
+}
 
-// returns UVI
+//  UVI color indicator
+
+
+
+
+
