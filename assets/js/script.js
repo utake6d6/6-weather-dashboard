@@ -83,6 +83,17 @@ function displayInfo(city, weatherData) {
   get("currWind").innerHTML = weatherData.current.wind_speed + "mph";
   get("currUvi").style.color = translateUvi(uvi).color;
   get("currUvi").innerHTML = translateUvi(uvi).display;
+
+  for (i = 1; i < 6; i++) {
+    var daily = weatherData.daily[i];
+
+    get("d" + i + "h").innerHTML = formatDate(daily.dt * 1000);
+    get("d" + i + "Condition").innerHTML = daily.weather[0].main;
+    get("d" + i + "Icon").src =
+      "http://openweathermap.org/img/wn/" + daily.weather[0].icon + ".png";
+    get("d" + i + "Temp").innerHTML = daily.temp.day + "°F";
+    get("d" + i + "Humidity").innerHTML = daily.humidity + "%";
+  }
 }
 
 function get(id) {
