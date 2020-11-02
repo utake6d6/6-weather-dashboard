@@ -31,17 +31,31 @@ function callApi(cityName) {
       // cityList.push(cityField.value);
       // console.log(cityList);
 
+      // returns city
+      $.getJSON(
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
+          cityName +
+          "&appid=d2aaf64c3e7944fd08c574266c941724",
+        function (data) {
+          console.log(data.main.name);
+          var div = document.createElement("div");
+          div.innerHTML = "" + data.main.name;
+          document.getElementById("main").appendChild(div);
+        }
+      );
+
       // returns temp
       $.getJSON(
         "https://api.openweathermap.org/data/2.5/weather?lat=" +
           data.coord.lat +
           "&lon=" +
           data.coord.lon +
+          "&units=imperial" +
           "&appid=d2aaf64c3e7944fd08c574266c941724",
         function (data) {
           console.log(data.main.temp);
           var div = document.createElement("div");
-          div.innerHTML = "Temperature: " + data.main.temp;
+          div.innerHTML = "Temperature: " + data.main.temp + "F";
           document.getElementById("main").appendChild(div);
         }
       );
@@ -58,7 +72,7 @@ function callApi(cityName) {
           // console.log("submitButton.onclick -> data", data);
           console.log(data.current.humidity);
           var div = document.createElement("div");
-          div.innerHTML = "Humidity: " + data.current.humidity;
+          div.innerHTML = "Humidity: " + data.current.humidity + "%";
           document.getElementById("main").appendChild(div);
           // console.log(cityField.value);
         }
@@ -70,13 +84,14 @@ function callApi(cityName) {
           data.coord.lat +
           "&lon=" +
           data.coord.lon +
+          "&units=imperial" +
           "&appid=d2aaf64c3e7944fd08c574266c941724",
         function (data) {
           // JSON result in `data` variable
           // console.log("submitButton.onclick -> data", data);
           console.log(data.wind);
           var div = document.createElement("div");
-          div.innerHTML = "Wind Speed: " + data.wind;
+          div.innerHTML = "Wind Speed: " + data.wind + "m/h";
           document.getElementById("main").appendChild(div);
         }
       );
@@ -84,20 +99,20 @@ function callApi(cityName) {
   );
 }
 
-// // returns UVI
-// $.getJSON(
-//   "http://api.openweathermap.org/data/2.5/uvi?lat=" +
-//     data.coord.lat +
-//     "&lon=" +
-//     data.coord.lon +
-//     "&appid=d2aaf64c3e7944fd08c574266c941724",
-//   function (data) {
-//     // JSON result in `data` variable
-//     // console.log("submitButton.onclick -> data", data);
-//     // console.log(data.current.speed);
-//     var div = document.createElement("div");
-//     div.innerHTML = "UV index: " + data.current.speed;
-//     document.getElementById("wind").appendChild(div);
-//     // console.log(cityField.value);
-//   }
-// );
+// returns UVI
+$.getJSON(
+  "http://api.openweathermap.org/data/2.5/uvi?lat=" +
+    data.coord.lat +
+    "&lon=" +
+    data.coord.lon +
+    "&appid=d2aaf64c3e7944fd08c574266c941724",
+  function (data) {
+    // JSON result in `data` variable
+    // console.log("submitButton.onclick -> data", data);
+    console.log(data.current.speed);
+    var div = document.createElement("div");
+    div.innerHTML = "UV index: " + data.current.speed;
+    document.getElementById("wind").appendChild(div);
+    // console.log(cityField.value);
+  }
+);
