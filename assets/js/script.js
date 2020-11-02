@@ -44,22 +44,21 @@ function callApi(city) {
         }
       );
     }
-  );
-  .fail(function(event, jqxhr, exception) {
+  ).fail(function (event, jqxhr, exception) {
     alert("'" + city + "' not found");
   });
 }
 
 function processCity(city) {
-  if(city) {
+  if (city) {
     callApi(city.trim().toUpperCase());
-    cityField.value = '';
+    cityField.value = "";
   }
 }
 
 function selectContains(city) {
-  for(i=0; i < citySelect.length; i++) {
-    if(citySelect.options[i].text === city){
+  for (i = 0; i < citySelect.length; i++) {
+    if (citySelect.options[i].text === city) {
       return true;
     }
   }
@@ -69,18 +68,21 @@ function selectContains(city) {
 function displayInfo(city, weatherData) {
   var uvi = weatherData.current.uvi;
 
-  get('currentDiv').style.visibility = 'visible';
-  $(".daily").css('visibility', 'visible');
+  get("currentDiv").style.visibility = "visible";
+  $(".daily").css("visibility", "visible");
 
-  get('cityHeader').innerHTML = city + ' ' + formatDate(weatherData.current.dt * 1000);
-  get('currCondition'). innerHTML = weatherData.current.weather[0].main;
-  get('currIcon').src = 'https://openweathermap.org/img/wn/04d@2x.png' + weatherData.current.weather[0].icon + '.png';
-  get('currTemp').innerHTML = weatherData.current.temp + '°F';
-  get('currHumidity').innerHTML = weatherData.current.humidity + '%';
-  get('currWind').innerHTML = weatherData.current.wind_speed + 'mph';
-  get('currUvi').style.color = translateUvi(uvi).color;
-  get('currUvi').innerHTML = translateUvi(uvi).display;
-
+  get("cityHeader").innerHTML =
+    city + " " + formatDate(weatherData.current.dt * 1000);
+  get("currCondition").innerHTML = weatherData.current.weather[0].main;
+  get("currIcon").src =
+    "http://openweathermap.org/img/wn/" +
+    weatherData.current.weather[0].icon +
+    "@2x.png";
+  get("currTemp").innerHTML = weatherData.current.temp + "°F";
+  get("currHumidity").innerHTML = weatherData.current.humidity + "%";
+  get("currWind").innerHTML = weatherData.current.wind_speed + "mph";
+  get("currUvi").style.color = translateUvi(uvi).color;
+  get("currUvi").innerHTML = translateUvi(uvi).display;
 }
 
 function get(id) {
@@ -88,8 +90,29 @@ function get(id) {
 }
 
 //  UVI color indicator
+function translateUvi(uvi) {
+  var uviData = {};
 
+  if (uvi <= 2) {
+    uviData.color = "green";
+    uviData.display = uvi + " (Favorable)";
+  } else if (uvi <= 7) {
+    uviData.color = "orange";
+    uviData.display = uvi + " (Moderate)";
+  } else {
+    uviData.color = "red";
+    uviData.display = uvi + " (Severe)";
+  }
+  return uviData;
+}
 
+function formatDate(date) {
+  var d = new Date(date),
+    month = "" + (d.getMonth() + 1);
+  (day = "" + d.getDate()), (year = d.getFullYear());
 
+  if (month.length < 2) month = "0" + month;
+  if (day.length < 2) day = "0" + day;
 
-
+  return [month, day, year].join("/");
+}
