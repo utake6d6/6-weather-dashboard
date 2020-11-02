@@ -39,9 +39,9 @@ function callApi(cityName) {
           data.coord.lon +
           "&appid=d2aaf64c3e7944fd08c574266c941724",
         function (data) {
-          console.log(data.current.temp);
+          console.log(data.main.temp);
           var div = document.createElement("div");
-          div.innerHTML = "Temperature: " + data.current.temp;
+          div.innerHTML = "Temperature: " + data.main.temp;
           document.getElementById("main").appendChild(div);
         }
       );
@@ -74,11 +74,10 @@ function callApi(cityName) {
         function (data) {
           // JSON result in `data` variable
           // console.log("submitButton.onclick -> data", data);
-          console.log(data.current.wind);
+          console.log(data.wind);
           var div = document.createElement("div");
-          div.innerHTML = "Wind Speed: " + data.current.wind;
+          div.innerHTML = "Wind Speed: " + data.wind;
           document.getElementById("main").appendChild(div);
-          // console.log(cityField.value);
         }
       );
     }
