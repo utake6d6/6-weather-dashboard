@@ -14,22 +14,23 @@
   <h1><strong>Weather Dashboard</strong></h1>
   </div>
   <!-- container for body -->
-  <div class="container">
     <!-- content row -->
-    <div class="row">
       <!-- search for city row -->
       <div class="col-sm-4 bg-light">
       <!-- search for city heading -->
       <h4 class="pt-1"><strong>Search for a City:</strong></h4>
       <!-- input form, btn and drop down -->
       <div class="input-group mb-3">
-        <!-- input cityField -->
-        <input id='cityField' type='text' autofocus/>
+      <!-- input cityField -->
+      <input id='cityField' type='text' autofocus/>
       <!-- submit btn -->
       <button id='searchButton'>Search</button>
       <!-- drop down for prior searches -->
       <select id='citySelect'></select>
       </div>
+
+      <br/><br/>
+
       <!-- box showing searched city's name, todays date, weather img, temp, HMD, WS & UVI -->
         <div id='currentDiv' class='current'>
             <h2 id="cityHeader"></h2>
@@ -39,19 +40,21 @@
             <p>Wind Speed: <span id='currWind'></span></p>
             <p>UV Index: <span id='currUvi'></span></p>
         </div>
+
+        <br/>
+
         <!-- boxes showing next 5 days, date, weather img, temp & HMD -->
-        <div class="col-sm-12" id="">
-          <h3>5-Day Forecast:</h3>
-          <div class="row text-light">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+        <h3>5-Day Forecast:</h3>
+        <div class="daily">
+          <h3></h3>
+          <p>Condition: <span></span></p>
+          <p>Temperature: <span></span></p>
+          <p>Humidity: <span></span></p>
         </div>
-    </div>
-  </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets\js\script.js"></script>
