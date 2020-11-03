@@ -23,10 +23,11 @@
 
 .current {
   border: 5px outset #4a4ae9;
-  background-color: #add8e6;
+  background-color: #93dcf5;
   text-align: center;
   visibility: hidden;
   width: 25%;
+  border-radius: 12px;
 }
 
 .conIcon {
@@ -54,11 +55,12 @@
 
 .daily {
   border: 5px outset #4a4ae9;
-  background-color: #add8e6;
+  background-color: #93dcf5;
   text-align: center;
   width: 15%;
   visibility: hidden;
   display: inline-block;
+  border-radius: 12px;
 }
 
 body {
