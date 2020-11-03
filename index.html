@@ -6,30 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href=assets\css\style.css>
   <title>Weather Dashboard</title>
 </head>
 <body>
-  <!-- jumbotron -->
-  <div class="jumbotron container-fluid mt-4 text-center" style="background-color: #01014d; color: whitesmoke;">
-  <h1><strong>Weather Dashboard</strong></h1>
+  <div class="jumbotron">
+  <h1 class='h1'><strong>Weather Dashboard</strong></h1>
   </div>
-  <!-- container for body -->
-    <!-- content row -->
-      <!-- search for city row -->
-      <!-- search for city heading -->
-      <h4 class="pt-1"><strong>Search for a City:</strong></h4>
-      <!-- input form, btn and drop down -->
-      <!-- input cityField -->
-      <input id='cityField' type='text' autofocus/>
-      <!-- submit btn -->
-      <button id='searchButton'>Search</button>
-      <!-- drop down for prior searches -->
-      <select id='citySelect'></select>
+      <h3 class="pt-1"><strong>Search for a City:</strong></h3>
+      <input id='cityField' class='searchField' type='text' autofocus/>
+      <button id='searchButton' class='searchBtn'><strong>Search</strong></button>
+      <select id='citySelect' class='dropDown'></select>
       </div>
 
       <br/><br/>
 
-      <!-- box showing searched city's name, todays date, weather img, temp, HMD, WS & UVI -->
+      <h3 class="pt-1"><strong>Todays Forecast:</strong></h3>
         <div id='currentDiv' class='current'>
             <h2 id="cityHeader"></h2>
             <p>Condition: <span id='currCondition'></span><img id='currIcon' class='conIcon'></p>
@@ -41,8 +33,7 @@
 
         <br/>
 
-        <!-- boxes showing next 5 days, date, weather img, temp & HMD -->
-        <h3>5-Day Forecast:</h3>
+        <h3 class="pt-1"><strong>5-Day Forecast:</strong></h3>
         <div class="daily">
           <h3 id='d1h'></h3>
           <p>Condition: <span id='d1Condition'></span><img id='d1Icon' class='conIcon'></p>

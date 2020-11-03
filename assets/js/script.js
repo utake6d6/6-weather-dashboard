@@ -2,7 +2,6 @@ var cityField = get("cityField");
 var searchButton = get("searchButton");
 var citySelect = get("citySelect");
 
-// Search on btn click
 searchButton.onclick = function () {
   processCity(cityField.value);
 };
@@ -15,7 +14,6 @@ cityField.addEventListener("keyup", function (event) {
 });
 
 citySelect.onchange = function () {
-  // console.log(citySelect.value);
   processCity(citySelect.value);
 };
 
@@ -100,7 +98,6 @@ function get(id) {
   return document.getElementById(id);
 }
 
-//  UVI color indicator
 function translateUvi(uvi) {
   var uviData = {};
 
