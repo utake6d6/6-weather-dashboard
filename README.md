@@ -26,8 +26,8 @@ Create a weather dashboard that runs in the browser and features dynamic HTML an
 **WHEN** I click on a city in the search history\
 **THEN** I am again presented with current and future conditions for that city
 
-**Repository URL:**
+**Repository URL:** https://github.com/utake6d6/6-weather-dashboard
 
-**Website URL:**
+**Website URL:** https://utake6d6.github.io/6-weather-dashboard/
 
-**Screenshot:** ![picture]()
+**Screenshot:** ![picture](https://github.com/utake6d6/6-weather-dashboard/blob/main/assets/img/srnshot.png)
