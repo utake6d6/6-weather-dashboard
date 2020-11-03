@@ -73,7 +73,7 @@ function displayInfo(city, weatherData) {
     city + " " + formatDate(weatherData.current.dt * 1000);
   get("currCondition").innerHTML = weatherData.current.weather[0].main;
   get("currIcon").src =
-    "http://openweathermap.org/img/wn/" +
+    "https://openweathermap.org/img/wn/" +
     weatherData.current.weather[0].icon +
     "@2x.png";
   get("currTemp").innerHTML = weatherData.current.temp + "°F";
@@ -88,7 +88,7 @@ function displayInfo(city, weatherData) {
     get("d" + i + "h").innerHTML = formatDate(daily.dt * 1000);
     get("d" + i + "Condition").innerHTML = daily.weather[0].main;
     get("d" + i + "Icon").src =
-      "http://openweathermap.org/img/wn/" + daily.weather[0].icon + ".png";
+      "https://openweathermap.org/img/wn/" + daily.weather[0].icon + ".png";
     get("d" + i + "Temp").innerHTML = daily.temp.day + "°F";
     get("d" + i + "Humidity").innerHTML = daily.humidity + "%";
   }
